@@ -56,8 +56,8 @@ def rotate(instream):
 def main(infile, outfile, iterations):
 	"""Rotates strings by *iterations* * 90 degrees, counterclockwise,
 	and writes the result to *outfile*.
-	While certain degrees like multiples of 45 might be fun, this only
-	with multiples of 90 for the time being."""
+	While certain degrees like multiples of 45 might be fun to implement,
+	this only works with multiples of 90 for the time being."""
 	with open(infile, 'r') as f:
 		f = ''.join([line for line in f])
 	for _ in range(iterations):
