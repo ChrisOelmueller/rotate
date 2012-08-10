@@ -37,6 +37,14 @@ Run as `rotate.py infile outfile degrees`
 1.69
 257.
 3.80
+>>> transpose(transpose(numbers)) == numbers
+True
+>>> rotate(rotate(rotate(rotate(numbers)))) == numbers
+True
+>>> transpose(rotate(numbers)) == rotate(transpose(numbers))
+False
+>>> transpose(rotate(transpose(numbers))) == rotate(rotate(rotate(numbers)))
+True
 """
 
 import itertools, sys
