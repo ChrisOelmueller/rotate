@@ -67,7 +67,7 @@ def main(infile, outfile, iterations):
 	While certain degrees like multiples of 45 might be fun to implement,
 	this only works with multiples of 90 for the time being."""
 	with open(infile, 'r') as f:
-		f = ''.join([line for line in f])
+		f = ''.join(line for line in f)
 	for _ in range(iterations):
 		f = rotate(f)
 	with open(outfile, 'w') as out:
