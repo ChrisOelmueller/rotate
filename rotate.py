@@ -55,7 +55,7 @@ def transpose(instream, rotate=False):
 	transposed = list(map(''.join, itertools.zip_longest(*stripped, fillvalue=' ')))
 	if rotate:
 		transposed.reverse()
-	return '\n'.join(transposed)
+	return '\n'.join(l.rstrip() for l in transposed)
 
 def rotate(instream):
 	"""Rotates strings by 90 degrees, counterclockwise."""
