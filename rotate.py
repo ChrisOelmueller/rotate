@@ -73,9 +73,15 @@ def main(infile, outfile, iterations):
 	with open(outfile, 'w') as out:
 		out.write(f)
 
+
 if __name__ == '__main__':
+	if len(sys.argv) < 2 or len(sys.argv) > 4:
+		print(USAGE)
+		sys.exit(1)
+
 	import doctest
 	doctest.testmod()
 	infile, outfile, rotation = sys.argv[1:]
 	iterations = int(rotation) // 90 # how often to rotate 90 degrees, counterclockwise
 	main(infile, outfile, iterations)
+	print(outfile)
