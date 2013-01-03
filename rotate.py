@@ -22,21 +22,20 @@
 # BILITY,  WHETHER IN AN ACTION OF CONTRACT,  TORT OR OTHERWISE,  ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""
-Run as `rotate.py infile outfile degrees`
 
->>> numbers = ('123\\n'
-...            '.5.\\n'
-...            '678\\n'
-...            '9.0'  )
+r"""
+>>> numbers = ('123\n'
+...            ' 5\n'
+...            '678\n'
+...            '9 0'  )
 >>> print(rotate(numbers))
-3.80
-257.
-1.69
+3 80
+257
+1 69
 >>> print(transpose(numbers))
-1.69
-257.
-3.80
+1 69
+257
+3 80
 >>> transpose(transpose(numbers)) == numbers
 True
 >>> rotate(rotate(rotate(rotate(numbers)))) == numbers
@@ -46,6 +45,7 @@ False
 >>> transpose(rotate(transpose(numbers))) == rotate(rotate(rotate(numbers)))
 True
 """
+USAGE = 'Run as `rotate.py infile outfile degrees`'
 
 import itertools, sys
 
@@ -62,8 +62,8 @@ def rotate(instream):
 	return transpose(instream, rotate=True)
 
 def main(infile, outfile, iterations):
-	"""Rotates strings by *iterations* * 90 degrees, counterclockwise,
-	and writes the result to *outfile*.
+	"""Rotates strings by `iterations` * 90 degrees, counterclockwise,
+	and writes the result to `outfile`.
 	While certain degrees like multiples of 45 might be fun to implement,
 	this only works with multiples of 90 for the time being."""
 	with open(infile, 'r') as f:
