@@ -47,19 +47,23 @@ True
 """
 USAGE = 'Run as `rotate.py infile outfile degrees`'
 
-import itertools, sys
+import itertools
+import sys
+
 
 def transpose(instream, rotate=False):
 	"""Transposes strings."""
 	stripped = [l.rstrip() for l in instream.split('\n')]
-	transposed = list(map(''.join, itertools.zip_longest(*stripped, fillvalue=' ')))
+	transposed = map(''.join, itertools.zip_longest(*stripped, fillvalue=' '))
 	if rotate:
-		transposed.reverse()
+		transposed = reversed(list(transposed))
 	return '\n'.join(l.rstrip() for l in transposed)
+
 
 def rotate(instream):
 	"""Rotates strings by 90 degrees, counterclockwise."""
 	return transpose(instream, rotate=True)
+
 
 def main(infile, outfile, iterations):
 	"""Rotates strings by `iterations` * 90 degrees, counterclockwise,
@@ -82,6 +86,7 @@ if __name__ == '__main__':
 	import doctest
 	doctest.testmod()
 	infile, outfile, rotation = sys.argv[1:]
-	iterations = int(rotation) // 90 # how often to rotate 90 degrees, counterclockwise
+	# how often to rotate 90 degrees, counterclockwise
+	iterations = int(rotation) // 90
 	main(infile, outfile, iterations)
 	print(outfile)
