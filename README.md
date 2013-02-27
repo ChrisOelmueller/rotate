@@ -1,18 +1,24 @@
 rotate
 ======
 
-Rotate text files by 90, 180 or 270 degrees. Also contains a transpose method but no interface to use it except as doctest.
+Rotate text files by 90, 180 or 270 degrees.
+Also contains a transpose method but no interface to use it except as doctest.
 
-Run as `rotate.py infile outfile degrees`. `degrees` will round down to multiples of `90`.
+Run as `rotate.py infile outfile degrees`.
+`degrees` will round down to multiples of `90`.
 
 `degrees=90` will rotate **counterclockwise** (positive rotation)!
 
+Heroku
+======
+Live demo:
+**http://rotate.herokuapp.com/**
 
 License
 =======
 The MIT License (MIT)
 
-Copyright (c) 2012 Chris Oelmueller <chris.oelmueller@gmail.com>
+Copyright (c) 2012-2013 Chris Oelmueller <chris.oelmueller@gmail.com>
 
 Permission is hereby granted, free of charge,  to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
