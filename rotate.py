@@ -47,14 +47,17 @@ True
 """
 USAGE = 'Run as `rotate.py infile outfile degrees`'
 
-import itertools
 import sys
+try:
+    from itertools import zip_longest
+except ImportError:
+    from itertools import izip_longest as zip_longest
 
 
 def transpose(instream, rotate=False):
 	"""Transposes strings."""
 	stripped = [l.rstrip() for l in instream.split('\n')]
-	transposed = map(''.join, itertools.zip_longest(*stripped, fillvalue=' '))
+	transposed = map(''.join, zip_longest(*stripped, fillvalue=' '))
 	if rotate:
 		transposed = reversed(list(transposed))
 	return '\n'.join(l.rstrip() for l in transposed)
