@@ -1,17 +1,20 @@
 {% extends "template.html" %}
 {% block body %}
-<form action="{{ url_for('rotate') }}" method=post>
+<h2>{{mode}}</h2>
 <dl>
-<dt>Text to rotate:
-<dd><textarea name=text rows=14 cols=80></textarea>
-<dt>
-  <input type='radio' name='clockwise' value=positive checked=checked /> Counterclockwise
-  <input type='radio' name='clockwise' value=negative /> Clockwise
-<dt>
-  <input type='radio' name='iterations' value=1 checked=checked /> 90°
-  <input type='radio' name='iterations' value=2 /> 180°
-  <input type='radio' name='iterations' value=3 /> 270°
-<dd><input type=submit value=Rotate>
-</dl>
+<form action="{{ url_for(mode[0]) }}" method=post>
+<dt>Text to {{mode}}:</dt>
+<dd><textarea name=text rows=14 cols=80>{% if text %}{{text}}{% endif %}</textarea></dd>
+
+{% for name, option in options.items() %}<dd>
+{% for value, label in option
+%}    <input type='radio' name={{name}} value={{value}}{% if loop.first %} checked{% endif %} /> {{label}}
+{% endfor %}</dd>{% endfor %}
+
+<dd><input type=submit value={{mode|capitalize}}></dd>
 </form>
+
+{% if output %}<dd><pre>{{output}}</pre>{% endif %}
+
+</dl>
 {% endblock %}
