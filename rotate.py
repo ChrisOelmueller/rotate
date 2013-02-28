@@ -63,6 +63,21 @@ def transpose(instream, rotate=False):
 	return '\n'.join(l.rstrip() for l in transposed)
 
 
+def mirror(instream, vertical=False):
+	"""Mirrors strings (horizontally by default)."""
+	if vertical:
+		# Can preserve trailing whitespace
+		unstripped = instream.split('\n')
+		mirrored = reversed(unstripped)
+	else:
+		# Relies on padding => needs a strip
+		stripped = [l.rstrip() for l in instream.split('\n')]
+		maxlen = max(len(l) for l in stripped)
+		padded = [l.ljust(maxlen) for l in stripped]
+		mirrored = [l[::-1] for l in padded]
+	return '\n'.join(mirrored)
+
+
 def rotate(instream):
 	"""Rotates strings by 90 degrees, counterclockwise."""
 	return transpose(instream, rotate=True)
