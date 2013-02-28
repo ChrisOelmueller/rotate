@@ -3,12 +3,12 @@ import os
 
 from flask import Flask, render_template, request
 
-from rotate import rotate as rotate_text
+from rotate import rotate
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def rotate():
+def r():
     if request.method == 'GET':
         return render_template('submit.html')
     elif request.method == 'POST':
@@ -23,7 +23,7 @@ def do_rotate(text, iterations, clockwise=False):
         # Subtract from 360 degree rotation in other direction
         iterations = 4 - iterations
     for _ in range(iterations):
-        text = rotate_text(text)
+        text = rotate(text)
     return text
 
 if __name__ == '__main__':
