@@ -2,3 +2,8 @@ pre      { background: #eee; border: 2px solid #ccc; }
 textarea { background: #eee; border: 2px solid #ccc; }
 
 .page    { padding: 0.8em; font-family: sans-serif; }
+
+#nav     { width: 100%; list-style: none; float: left; margin: 0 0 0.8em 0; }
+#nav li  { float: left; }
+#nav li a{ padding: 10px 20px; font-weight: bold; color: #06c; }
+#nav li a:hover { color: #039; }
