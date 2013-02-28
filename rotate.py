@@ -60,7 +60,7 @@ def transpose(instream, rotate=False):
 	transposed = map(''.join, zip_longest(*stripped, fillvalue=' '))
 	if rotate:
 		transposed = reversed(list(transposed))
-	return '\n'.join(l.rstrip() for l in transposed)
+	return '\n'.join(transposed)
 
 
 def mirror(instream, vertical=False):
