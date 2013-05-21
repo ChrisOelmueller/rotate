@@ -1,13 +1,15 @@
 rotate
 ======
 
-Rotate text files by 90, 180 or 270 degrees.
-Also contains a transpose method but no interface to use it except as doctest.
+Rotate text by 90, 180 or 270 degrees, mirror text, transpose text.
 
-Run as `rotate.py infile outfile degrees`.
+The live demo below showcases those three different modes.
+
+If python in version 3 is available, you can also run `rotate` from the
+command line as `rotate.py infile outfile degrees`.
 `degrees` will round down to multiples of `90`.
 
-`degrees=90` will rotate **counterclockwise** (positive rotation)!
+Note: `degrees=90` will rotate **counterclockwise** (positive rotation)!
 
 Heroku
 ======
