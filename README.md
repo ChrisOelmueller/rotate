@@ -14,7 +14,7 @@ Note: `degrees=90` will rotate **counterclockwise** (positive rotation)!
 Heroku
 ======
 Live demo:
-**http://rotate.herokuapp.com/**
+**http://xom.montres.org.uk:3333**
 
 License
 =======
