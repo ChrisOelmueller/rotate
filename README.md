@@ -11,10 +11,9 @@ command line as `rotate.py infile outfile degrees`.
 
 Note: `degrees=90` will rotate **counterclockwise** (positive rotation)!
 
-Heroku
-======
-Live demo:
-**http://xom.montres.org.uk:3333**
+Live demo
+=========
+**http://xom.montres.org.uk:3333** ([@Rytisgit](https://github.com/Rytisgit))
 
 License
 =======
